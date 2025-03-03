@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        /* Reset default margins and padding */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body styling */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* Header, content, footer */
+            height: 100vh;
+        }
+        /* Header styling */
+        
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Grid layout for main content */
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two equal columns */
+            gap: 20px;
+            /* Space between columns */
+            padding: 20px;
+        }
+        /* Left column */
+        
+        .left-column {
+            background-color: #ecf0f1;
+            padding: 20px;
+        }
+        /* Right column */
+        
+        .right-column {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        /* Footer styling */
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Media Query for smaller screens (tablets, mobiles) */
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                /* Stack columns on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Grid Layout</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="left-column">
+            <h2>Left Column</h2>
+            <p>This is the left column of the layout. It uses CSS Grid to be placed beside the right column.</p>
+        </div>
+        <div class="right-column">
+            <h2>Right Column</h2>
+            <p>This is the right column. Like the left column, it is arranged using CSS Grid, right beside the left column.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Your Name</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .animated-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .animated-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        @keyframes clickAnimation {
+            0% {
+                transform: scale(1);
+                background-color: #3498db;
+            }
+            25% {
+                transform: scale(1.1);
+                background-color: #e74c3c;
+            }
+            50% {
+                transform: scale(1.2);
+                background-color: #f39c12;
+            }
+            75% {
+                transform: scale(1.1);
+                background-color: #2ecc71;
+            }
+            100% {
+                transform: scale(1);
+                background-color: #3498db;
+            }
+        }
+        
+        .clicked {
+            animation: clickAnimation 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="animated-btn" id="btn">Click Me</button>
+
+    <script>
+        const button = document.getElementById('btn');
+
+        button.addEventListener('click', function() {
+            button.classList.add('clicked');
+            setTimeout(function() {
+                button.classList.remove('clicked');
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>
