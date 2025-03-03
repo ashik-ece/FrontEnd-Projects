@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        /* Reset default margins and padding */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body styling */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Header styling */
+        
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Main content area */
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        /* Left column */
+        
+        .left-column {
+            flex: 1 1 200px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-right: 10px;
+        }
+        /* Center column */
+        
+        .center-column {
+            flex: 2 1 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 0 10px;
+        }
+        /* Right column */
+        
+        .right-column {
+            flex: 1 1 200px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-left: 10px;
+        }
+        /* Footer styling */
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Flexbox properties for responsiveness */
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .left-column,
+            .center-column,
+            .right-column {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Flexbox Layout Example</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="left-column">
+            <h2>Left Column</h2>
+            <p>This is the left column of the layout. It contains content and is aligned using Flexbox.</p>
+        </div>
+        <div class="center-column">
+            <h2>Center Column</h2>
+            <p>This is the center column of the layout. It's the most important area and takes up more space.</p>
+        </div>
+        <div class="right-column">
+            <h2>Right Column</h2>
+            <p>This is the right column. Like the left column, it is aligned with Flexbox.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Your Name</p>
+    </footer>
+
+</body>
+
+</html>

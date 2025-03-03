@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Tooltip</title>
+    <style>
+        /* Reset default margins and padding */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body styling */
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        /* Tooltip styling */
+        
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #3498db;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        /* Tooltip text (hidden by default) */
+        
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            z-index: 1;
+        }
+        /* Tooltip triangle (pointer) */
+        
+        .tooltip-text::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        /* Show the tooltip when hovering */
+        
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hover over the word below to see the custom tooltip:</h1>
+
+    <div class="tooltip-container">
+        Hover me!
+        <div class="tooltip-text">
+            This is a custom tooltip.
+        </div>
+    </div>
+
+</body>
+
+</html>

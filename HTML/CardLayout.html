@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 15px;
+        }
+        
+        .card h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Card Layout Example</h1>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="image1.jpg" alt="Image1">
+            <div class="card-content">
+                <h3>Card Title 1</h3>
+                <p>This is a description of the first card. It can contain any information you like.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image2.jpg" alt="Image2">
+            <div class="card-content">
+                <h3>Card Title 2</h3>
+                <p>This is a description of the second card. It can also contain any information you like.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image3.jpg" alt="Image3">
+            <div class="card-content">
+                <h3>Card Title 3</h3>
+                <p>This is a description of the third card. Add content that fits your needs.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image4.jpg" alt="Image4">
+            <div class="card-content">
+                <h3>Card Title 4</h3>
+                <p>This is a description of the fourth card. You can add any details you want here.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
